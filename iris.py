@@ -60,22 +60,24 @@ def zeros():
 	return
 zeros()
 
-mini = 0
-maxi = 50
-
-for h in range(0, 3):
-	for i in range(0, len(parametres)):
-		for j in range(mini, maxi):
-			sums[h][i] = float(sums[h][i]) + float(parametres[i][j])		#Sum of values.
-		avg[h][i] = sums[h][i] / 50		#Mean of sum.
-		for j in range(mini, maxi):
-			devsq[h][i] = float(devsq[h][i]) + (float(parametres[i][j]) - float(avg[h][i])) * (float(parametres[i][j]) - float(avg[h][i]))		#Sum of the squared deviations from the mean.
-			var[h][i] = devsq[h][i] / 50		#Variance.
-			sigma3[h][i] = 3 * sqrt(var[h][i])		#3-sigma value.
-			min_sigma3[h][i] = abs(avg[h][i] - 3 * sqrt(var[h][i]))		#Minimal 3-sigma limit.
-			max_sigma3[h][i] = abs(avg[h][i] + 3 * sqrt(var[h][i]))		#Maximal 3-sigma limit.
-	mini = mini + 50
-	maxi = maxi + 50
+def values():
+	mini = 0
+	maxi = 50
+	for h in range(0, 3):
+		for i in range(0, len(parametres)):
+			for j in range(mini, maxi):
+				sums[h][i] = float(sums[h][i]) + float(parametres[i][j])		#Sum of values.
+			avg[h][i] = sums[h][i] / 50		#Mean of sum.
+			for j in range(mini, maxi):
+				devsq[h][i] = float(devsq[h][i]) + (float(parametres[i][j]) - float(avg[h][i])) * (float(parametres[i][j]) - float(avg[h][i]))		#Sum of the squared deviations from the mean.
+				var[h][i] = devsq[h][i] / 50		#Variance.
+				sigma3[h][i] = 3 * sqrt(var[h][i])		#3-sigma value.
+				min_sigma3[h][i] = abs(avg[h][i] - 3 * sqrt(var[h][i]))		#Minimal 3-sigma limit.
+				max_sigma3[h][i] = abs(avg[h][i] + 3 * sqrt(var[h][i]))		#Maximal 3-sigma limit.
+		mini = mini + 50
+		maxi = maxi + 50
+	return
+values()
 
 
 #	Inputting values of your parametres.
