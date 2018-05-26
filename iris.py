@@ -41,7 +41,7 @@ parametres = [sepal_length, sepal_width, petal_length, petal_width]
 
 
 #	Calculating statistical values to use 3-sigma test for classifying the species of iris.
-#	Set of vales are calculated for each 4 parameter and each 3 species.
+#	Set of values are calculated for each 4 parameter and each 3 species.
 
 sums = []
 avg = []
