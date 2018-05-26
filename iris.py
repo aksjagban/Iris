@@ -52,15 +52,15 @@ min_sigma3 = []
 max_sigma3 = []
 listoflist = [sums, avg, devsq, var, sigma3, min_sigma3, max_sigma3]
 
-def zeros():
+def zeros ():
 	for g in range(0, len(listoflist)):
 		for h in range(0, 3):
 			listoflist[g].append([])
 			listoflist[g][h] = [0,0,0,0]
 	return
-zeros()
+zeros ()
 
-def values():
+def values ():
 	mini = 0
 	maxi = 50
 	for h in range(0, 3):
@@ -77,7 +77,7 @@ def values():
 		mini = mini + 50
 		maxi = maxi + 50
 	return
-values()
+values ()
 
 
 #	Inputting values of your parametres.
