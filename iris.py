@@ -122,21 +122,22 @@ result = ""
 
 def check (your_sepal_length, your_sepal_width, your_petal_length, your_petal_width):
 
-	if ((your_sepal_length >= min_sigma3[0][0]) and (your_sepal_length <= max_sigma3[0][0]) and (your_sepal_width >= min_sigma3[0][1]) and (your_sepal_width <= max_sigma3[0][1]) and (your_petal_length >= min_sigma3[0][2]) and (your_petal_length <= max_sigma3[0][2]) and (your_petal_width >= min_sigma3[0][3]) and (your_petal_width <= max_sigma3[0][3])):
+	if (((your_sepal_length >= min_sigma3[0][0]) and (your_sepal_length <= max_sigma3[0][0]) and (your_sepal_width >= min_sigma3[0][1]) and (your_sepal_width <= max_sigma3[0][1]) and (your_petal_length >= min_sigma3[0][2]) and (your_petal_length <= max_sigma3[0][2]) and (your_petal_width >= min_sigma3[0][3]) and (your_petal_width <= max_sigma3[0][3])) and ((((abs(your_sepal_length - avg[0][0]) + abs(your_sepal_width - avg[0][1]) + abs(your_petal_length - avg[0][2]) + abs(your_petal_width - avg[0][3])) < (abs(your_sepal_length - avg[1][0]) + abs(your_sepal_width - avg[1][1]) + abs(your_petal_length - avg[1][2]) + abs(your_petal_width - avg[1][3]))) and ((abs(your_sepal_length - avg[0][0]) + abs(your_sepal_width - avg[0][1]) + abs(your_petal_length - avg[0][2]) + abs(your_petal_width - avg[0][3])) < (abs(your_sepal_length - avg[2][0]) + abs(your_sepal_width - avg[2][1]) + abs(your_petal_length - avg[2][2]) + abs(your_petal_width - avg[2][3])))))):
 		result = "setosa"
 		return result
 
-	elif ((your_sepal_length >= min_sigma3[1][0]) and (your_sepal_length <= max_sigma3[1][0]) and (your_sepal_width >= min_sigma3[1][1]) and (your_sepal_width <= max_sigma3[1][1]) and (your_petal_length >= min_sigma3[1][2]) and (your_petal_length <= max_sigma3[1][2]) and (your_petal_width >= min_sigma3[1][3]) and (your_petal_width <= max_sigma3[1][3])):
+	elif (((your_sepal_length >= min_sigma3[1][0]) and (your_sepal_length <= max_sigma3[1][0]) and (your_sepal_width >= min_sigma3[1][1]) and (your_sepal_width <= max_sigma3[1][1]) and (your_petal_length >= min_sigma3[1][2]) and (your_petal_length <= max_sigma3[1][2]) and (your_petal_width >= min_sigma3[1][3]) and (your_petal_width <= max_sigma3[1][3])) and ((((abs(your_sepal_length - avg[1][0]) + abs(your_sepal_width - avg[1][1]) + abs(your_petal_length - avg[1][2]) + abs(your_petal_width - avg[1][3])) < (abs(your_sepal_length - avg[0][0]) + abs(your_sepal_width - avg[0][1]) + abs(your_petal_length - avg[0][2]) + abs(your_petal_width - avg[0][3]))) and ((abs(your_sepal_length - avg[1][0]) + abs(your_sepal_width - avg[1][1]) + abs(your_petal_length - avg[1][2]) + abs(your_petal_width - avg[1][3])) < (abs(your_sepal_length - avg[2][0]) + abs(your_sepal_width - avg[2][1]) + abs(your_petal_length - avg[2][2]) + abs(your_petal_width - avg[2][3])))))):
 		result = "versicolor"
 		return result
 
-	elif ((your_sepal_length >= min_sigma3[2][0]) and (your_sepal_length <= max_sigma3[2][0]) and (your_sepal_width >= min_sigma3[2][1]) and (your_sepal_width <= max_sigma3[2][1]) and (your_petal_length >= min_sigma3[2][2]) and (your_petal_length <= max_sigma3[2][2]) and (your_petal_width >= min_sigma3[2][3]) and (your_petal_width <= max_sigma3[2][3])):
+	elif (((your_sepal_length >= min_sigma3[2][0]) and (your_sepal_length <= max_sigma3[2][0]) and (your_sepal_width >= min_sigma3[2][1]) and (your_sepal_width <= max_sigma3[2][1]) and (your_petal_length >= min_sigma3[2][2]) and (your_petal_length <= max_sigma3[2][2]) and (your_petal_width >= min_sigma3[2][3]) and (your_petal_width <= max_sigma3[2][3])) and ((((abs(your_sepal_length - avg[2][0]) + abs(your_sepal_width - avg[2][1]) + abs(your_petal_length - avg[2][2]) + abs(your_petal_width - avg[2][3])) < (abs(your_sepal_length - avg[0][0]) + abs(your_sepal_width - avg[0][1]) + abs(your_petal_length - avg[0][2]) + abs(your_petal_width - avg[0][3]))) and ((abs(your_sepal_length - avg[2][0]) + abs(your_sepal_width - avg[2][1]) + abs(your_petal_length - avg[2][2]) + abs(your_petal_width - avg[2][3])) < (abs(your_sepal_length - avg[1][0]) + abs(your_sepal_width - avg[1][1]) + abs(your_petal_length - avg[1][2]) + abs(your_petal_width - avg[1][3])))))):
 		result = "virginica"
 		return result
 
 	else:
 		result = "unknown species"
 		return result
+
 
 print ("\nThis is "+check (your_sepal_length, your_sepal_width, your_petal_length, your_petal_width)+".\n")
 
@@ -182,7 +183,5 @@ for i in file1:
 for o in out:
 	report.write(str(o)+"\n")
 
-report.write("\nIn these lines species from 'iris.txt' are not consistent with theoretical species from 'report.txt', calculated on the basis of statistical 3-sigma test.\nSome values from these lines lay outside the 3-sigma ranges.\nThat is why 16 virginica irises have been classified as versicolor and 1 setosa iris has been classified as unknown.\n")
+report.write("\nIn these lines species from 'iris.txt' are not consistent with theoretical species from 'report.txt', calculated on the basis of statistical 3-sigma test.\nSome values from these lines lay outside the 3-sigma ranges.\n\nThat is why:\n1 setosa iris has been classified as unknown,\n3 versicolor irises have been classified as virginica,\n7 virginica irises have been classified as versicolor,\n2 virginica irises have been classified as unknown.\n")
 report.close()
-
-
